@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LoginActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|top">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/login_background"
+                android:scaleType="centerCrop"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginBottom="60dp">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:inputType="textPersonName"
+                        android:id="@+id/usernameLogin"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/edittext_rounded"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:paddingStart="45dp"
+                        android:paddingEnd="45dp"
+                        android:maxLines="1"
+                        android:textSize="14dp"
+                        android:hint="Masukkan nama pengguna" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:id="@+id/passwordLogin"
+                        android:layout_below="@+id/usernameLogin"
+                        android:layout_alignRight="@+id/usernameLogin"
+                        android:layout_alignEnd="@+id/usernameLogin"
+                        android:layout_alignLeft="@+id/usernameLogin"
+                        android:layout_alignStart="@+id/usernameLogin"
+                        android:background="@drawable/edittext_rounded"
+                        android:layout_marginTop="40dp"
+                        android:paddingEnd="45dp"
+                        android:paddingStart="45dp"
+                        android:hint="Masukkan kata kunci"
+                        android:textSize="14dp"
+                        android:maxLines="1"
+                        android:inputType="textPassword"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="NAMA PENGGUNA"
+                        android:id="@+id/textView2"
+                        android:layout_above="@+id/usernameLogin"
+                        android:layout_alignLeft="@+id/usernameLogin"
+                        android:layout_alignStart="@+id/usernameLogin"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="KATA KUNCI"
+                        android:id="@+id/textView3"
+                        android:textColor="#ffffff"
+                        android:layout_below="@+id/usernameLogin"
+                        android:layout_alignLeft="@+id/passwordLogin"
+                        android:layout_alignStart="@+id/passwordLogin"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="12dp" />
+
+                    <Button
+                        android:layout_width="180dp"
+                        android:layout_height="45dp"
+                        android:text="MENUJU APLIKASI"
+                        android:id="@+id/buttonLogin"
+                        android:layout_below="@+id/passwordLogin"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/button_login"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Belum Punya Akun?"
+                        android:id="@+id/textView4"
+                        android:textColor="#ffffff"
+                        android:layout_below="@+id/buttonLogin"
+                        android:layout_alignLeft="@+id/textView3"
+                        android:layout_alignStart="@+id/textView3"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text=" DAFTAR SEKARANG"
+                        android:id="@+id/daftar"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/buttonLogin"
+                        android:layout_toRightOf="@+id/textView4"
+                        android:layout_toEndOf="@+id/textView4"
+                        android:layout_marginTop="20dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageView4"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/logo"
+                        android:layout_marginTop="70dp"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginRight="80dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Teknologi Cerdas Untuk Kesejahteraan Petani"
+                        android:id="@+id/textView6"
+                        android:textColor="#ffffff"
+                        android:layout_below="@+id/imageView4"
+                        android:layout_centerHorizontal="true" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView5"
+                        android:layout_alignBottom="@+id/passwordLogin"
+                        android:layout_alignLeft="@+id/passwordLogin"
+                        android:layout_alignStart="@+id/passwordLogin"
+                        android:src="@drawable/iconpassword"
+                        android:layout_marginLeft="6dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView6"
+                        android:layout_centerVertical="true"
+                        android:layout_alignLeft="@+id/usernameLogin"
+                        android:layout_alignStart="@+id/usernameLogin"
+                        android:src="@drawable/user"
+                        android:layout_marginLeft="6dp" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

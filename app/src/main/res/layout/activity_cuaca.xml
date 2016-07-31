@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".informasi.CuacaActivity"
+    android:id="@+id/informasipertanian"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:id="@+id/rel2">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtcuaca"
+        android:layout_below="@+id/textView37"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Masukkan Kota Anda"
+        android:id="@+id/textView37"
+            android:textSize="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="CEK"
+        android:id="@+id/btncuaca"
+        android:layout_below="@+id/txtcuaca"
+        android:layout_alignLeft="@+id/txtcuaca"
+        android:layout_alignStart="@+id/txtcuaca"
+        android:layout_alignRight="@+id/txtcuaca"
+        android:layout_alignEnd="@+id/txtcuaca"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
+</FrameLayout>

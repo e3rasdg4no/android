@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eragano.eraganoapps">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".splashscreen.SplashscreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".fragment.JadwalFragment" />
+        <activity android:name=".fragment.AsuransiFragment" />
+        <activity android:name=".fragment.HomeFragment" />
+        <activity android:name=".fragment.RekeningFragment" />
+        <activity android:name=".fragment.InformasiFragment"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".fragment.JualFragment" />
+        <activity android:name=".asuransi.Asuransi1" />
+        <activity android:name=".asuransi.Asuransi2" />
+        <activity android:name=".asuransi.Asuransi3" />
+        <activity android:name=".asuransi.Asuransi4" />
+        <activity android:name=".asuransi.klaim_asuransi.KlaimAsuransi1" />
+        <activity android:name=".asuransi.klaim_asuransi.KlaimAsuransi2" />
+        <activity android:name=".asuransi.Asuransi5" />
+        <activity android:name=".informasi.ArtikelActivity" />
+        <activity android:name=".informasi.CuacaActivity" />
+        <activity
+            android:name=".login.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".informasi.Artikel2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".jual.JualActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".fragment.PinjamanFragment" />
+        <activity
+            android:name=".jual.Jual2Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pinjaman.Pinjaman1" />
+        <activity android:name=".pinjaman.Pinjaman2" />
+        <activity android:name=".pinjaman.Pinjaman3" />
+        <activity android:name=".pinjaman.Pinjaman4" />
+        <activity android:name=".pinjaman.Pinjaman5" />
+        <activity android:name=".pinjaman.Pinjaman6" />
+        <activity android:name=".pinjaman.Pinjaman7" />
+        <activity android:name=".pinjaman.Pinjaman8" />
+        <activity android:name=".asuransi.rincian_klaim.RincianActivity" />
+        <activity android:name=".pinjaman.rincian_pinjaman.RincianPinjaman" />
+        <activity android:name=".jual.camera.JualCameraActivity" />
+        <activity
+            android:name=".Chat.EntryActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".Chat.SampleChatActivity"
+            android:label="BANTUAN"
+            android:theme="@style/ZopimChatTheme"
+            android:windowSoftInputMode="stateUnspecified|adjustResize" />
+        <activity android:name=".ecommerce.RekapActivity" />
+        <activity android:name=".ecommerce.Ecommerce2Activity" />
+        <activity android:name=".ecommerce.KeranjangActivity" />
+        <activity android:name=".ecommerce.EndActivity" />
+        <activity android:name=".ecommerce.RincianOrder" />
+        <activity android:name=".ecommerce.DetailRinci" />
+        <activity
+            android:name=".ImageViewerActivity"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="e895339f5b9dc032e8f1806b20dfe9b21d2d35d7" />
+
+        <activity android:name=".fragment.KinerjaFragment" />
+        <activity android:name=".performa.InputKinerja" />
+        <activity android:name=".fragment.KinerjaFragment2" />
+        <activity android:name=".performa.InputKinerjaActivity" />
+        <activity android:name=".informasi.weather_forecast.WeatherActivity"></activity>
+    </application>
+
+</manifest>

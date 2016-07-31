@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#62C16F</color>
+    <color name="colorPrimaryDark">#55a961</color>
+    <color name="colorAccent">#62C16F</color>
+    <color name="hijau">#62C16F</color>
+    <color name="abudasar">#efefef</color>
+    <color name="orange">#ffb435</color>
+    <color name="merah">#f2245a</color>
+    <color name="abuview">#a9a9a9</color>
+    <color name="abutab">#FFF5F3F6</color>
+    <color name="abubutton">#cacaca</color>
+
+    <color name="statusBarColor">#4169E1</color>
+    <color name="toolBarColor">#4682B4</color>
+    <color name="abutulisan">#5a5a5a</color>
+    <color name="sample_red">#62C16F</color>
+    <color name="sample_dark_red">#62C16F</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="tab_highlight">#ff9ecfbf</color>
+</resources>

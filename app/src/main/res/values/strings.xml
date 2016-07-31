@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Eragano Testing</string>
+    <string name="ip">103.236.201.252</string>
+    <string name="open_weather_maps_app_id">532d313d6a9ec4ea93eb89696983e369</string>
+
+    <string name="weather_sunny">&#xf00d;</string>
+    <string name="weather_clear_night">&#xf02e;</string>
+
+    <string name="weather_foggy">&#xf014;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_rainy">&#xf019;</string>
+    <string name="weather_snowy">&#xf01b;</string>
+    <string name="weather_thunder">&#xf01e;</string>
+    <string name="weather_drizzle">&#xf01c;</string>
+
+    <string name="place_not_found">Maaf tempat yang anda masukkan salah atau periksa kembali internet anda</string>
+
+
+    <string-array name="navDrawerItems">
+        <item>MENU UTAMA</item>
+        <item>BELI KEBUTUHAN BERTANI</item>
+        <item>JADWAL BERTANI</item>
+        <item>JUAL HASIL PANEN</item>
+        <item>ASURANSI</item>
+        <item>PINJAMAN LUNAK</item>
+        <item>INFORMASI PERTANIAN</item>
+        <item>KINERJA PETANI</item>
+        <item>KELUAR AKUN INI</item>
+    </string-array>
+
+    <string-array name="navDrawerIcons">
+
+        <item>@drawable/iconhome</item>
+        <item>@drawable/iconbeli</item>
+        <item>@drawable/iconjadwal</item>
+        <item>@drawable/iconjual</item>
+        <item>@drawable/iconasuransi</item>
+        <item>@drawable/iconpinjaman</item>
+        <item>@drawable/iconinformasi</item>
+        <item>@drawable/iconkinerja</item>
+        <item>@drawable/logout</item>
+    </string-array>
+
+    <string name="chat_fragment_title">Chat (fragment)</string>
+    <string name="button_no_config">Bantuan (no config)</string>
+    <string name="button_optional_pre_chat_activity">Chat (all fields optional)</string>
+    <string name="button_requred_pre_chat_activity">Chat (all fields required)</string>
+    <string name="button_no_pre_chat_form_activity">Chat (no pre-chat form)</string>
+    <string name="button_pre_set_data_activity">Chat (pre-set data)</string>
+    <string name="button_chat_fragment">Chat (fragment)</string>
+    <string name="button_account_key">Update account key</string>
+    <string name="hint_account_key">Update account key</string>
+    <string name="error_account_key">please enter the account key</string>
+    <string name="account_key_confirm">Chat reinitialized with new account key</string>
+    <string name="chat_activity_title">Bantuan</string>
+</resources>

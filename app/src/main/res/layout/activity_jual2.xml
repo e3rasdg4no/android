@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.jual.Jual2Activity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relativeLayout11"
+        android:background="#efefef"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/bantuanfix"
+            android:paddingBottom="8dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:id="@+id/bantu"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView12"
+            android:src="@drawable/logowarna"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/iconback"
+            android:paddingBottom="8dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:id="@+id/back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout11">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="900dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="left|top"
+        android:background="@color/hijau"
+        android:id="@+id/relativeLayout12">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="PRODUK SAYA"
+            android:id="@+id/textView59"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/image2"
+        android:layout_below="@+id/relativeLayout12"
+        android:layout_alignLeft="@+id/relativeLayout12"
+        android:layout_alignStart="@+id/relativeLayout12"
+        android:src="@drawable/produk"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Rubah Penjelasan Produk"
+        android:id="@+id/textView60"
+        android:layout_below="@+id/image2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+        <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/imageView13"
+        android:src="@drawable/iconedit"
+            android:layout_alignTop="@+id/namaproduk2"
+            android:layout_alignRight="@+id/namaproduk2"
+            android:layout_alignEnd="@+id/namaproduk2"
+            android:layout_alignBottom="@+id/namaproduk2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="NAMA PRODUK"
+            android:id="@+id/textView64"
+            android:layout_below="@+id/textView60"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/namaproduk2"
+            android:maxLines="1"
+            android:inputType="text"
+            android:layout_below="@+id/textView64"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignLeft="@+id/textView64"
+            android:layout_alignStart="@+id/textView64" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TANGGAL PANEN"
+            android:id="@+id/textView65"
+            android:layout_below="@+id/namaproduk2"
+            android:layout_alignLeft="@+id/namaproduk2"
+            android:layout_alignStart="@+id/namaproduk2"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tanggalpanen2"
+            android:maxLines="1"
+            android:inputType="text"
+            android:layout_below="@+id/textView65"
+            android:layout_alignLeft="@+id/textView65"
+            android:layout_alignStart="@+id/textView65"
+            android:layout_alignRight="@+id/imageView13"
+            android:layout_alignEnd="@+id/imageView13"
+            android:paddingEnd="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="SATUAN"
+            android:id="@+id/textView66"
+            android:layout_below="@+id/tanggalpanen2"
+            android:layout_alignLeft="@+id/tanggalpanen2"
+            android:layout_alignStart="@+id/tanggalpanen2"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner3"
+            android:layout_below="@+id/textView66"
+            android:layout_alignLeft="@+id/textView66"
+            android:layout_alignStart="@+id/textView66"
+            android:layout_alignRight="@+id/tanggalpanen2"
+            android:layout_alignEnd="@+id/tanggalpanen2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="JUMLAH PER SATUAN"
+            android:id="@+id/textView67"
+            android:layout_below="@+id/spinner3"
+            android:layout_alignLeft="@+id/spinner3"
+            android:layout_alignStart="@+id/spinner3"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jumlah2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:layout_below="@+id/textView67"
+            android:layout_alignLeft="@+id/textView67"
+            android:layout_alignStart="@+id/textView67"
+            android:layout_alignRight="@+id/spinner3"
+            android:layout_alignEnd="@+id/spinner3"
+            android:paddingEnd="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="HARGA PER SATUAN"
+            android:id="@+id/textView68"
+            android:layout_below="@+id/jumlah2"
+            android:layout_alignLeft="@+id/jumlah2"
+            android:layout_alignStart="@+id/jumlah2"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/harga2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:layout_below="@+id/textView68"
+            android:layout_alignLeft="@+id/jumlah2"
+            android:layout_alignStart="@+id/jumlah2"
+            android:layout_alignRight="@+id/jumlah2"
+            android:layout_alignEnd="@+id/jumlah2"
+            android:paddingEnd="20dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imageView11"
+            android:src="@drawable/iconedit"
+            android:layout_alignTop="@+id/tanggalpanen2"
+            android:layout_alignRight="@+id/tanggalpanen2"
+            android:layout_alignEnd="@+id/tanggalpanen2"
+            android:layout_alignBottom="@+id/tanggalpanen2" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imageView15"
+            android:src="@drawable/iconedit"
+            android:layout_alignTop="@+id/jumlah2"
+            android:layout_alignRight="@+id/jumlah2"
+            android:layout_alignEnd="@+id/jumlah2"
+            android:layout_alignBottom="@+id/jumlah2" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imageView16"
+            android:src="@drawable/iconedit"
+            android:layout_alignTop="@+id/harga2"
+            android:layout_alignRight="@+id/harga2"
+            android:layout_alignEnd="@+id/harga2"
+            android:layout_alignBottom="@+id/harga2" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="SIMPAN"
+            android:id="@+id/simpan"
+            android:background="@drawable/button_rounded"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/harga2"
+            android:layout_marginTop="40dp"
+            android:layout_alignLeft="@+id/relativeLayout8"
+            android:layout_alignStart="@+id/relativeLayout8"
+            android:layout_alignRight="@+id/relativeLayout8"
+            android:layout_alignEnd="@+id/relativeLayout8" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/relativeLayout8"
+            android:layout_below="@+id/simpan"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Butuh Bantuan?"
+                android:id="@+id/textView53"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="  HUBUNGI ERAGANO"
+                android:id="@+id/textView54"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/textView53"
+                android:layout_toEndOf="@+id/textView53" />
+        </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

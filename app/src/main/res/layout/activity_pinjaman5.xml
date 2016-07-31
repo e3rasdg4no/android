@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.fragment.AsuransiFragment"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:background="#ffffff">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/frameLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="left|top"
+                android:background="@color/hijau">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="left|top"
+                android:background="@color/hijau">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="PENGAJUAN PINJAMAN (LANGKAH 5)"
+                    android:id="@+id/textView7"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#e4e4e4"
+            android:id="@+id/relativeLayout14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/frameLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DATA CALON DEBITUR"
+                android:id="@+id/textView71"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:id="@+id/relativeLayout15"
+            android:layout_below="@+id/relativeLayout14"
+            android:layout_alignLeft="@+id/relativeLayout14"
+            android:layout_alignStart="@+id/relativeLayout14"
+            android:layout_alignRight="@+id/relativeLayout14"
+            android:layout_alignEnd="@+id/relativeLayout14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DATA KERABAT YANG TIDAK SERUMAH"
+                android:id="@+id/textView70"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="* wajib diisi"
+            android:id="@+id/textView116"
+            android:layout_below="@+id/relativeLayout15"
+            android:layout_alignLeft="@+id/relativeLayout15"
+            android:layout_alignStart="@+id/relativeLayout15"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="NAMA LENGKAP *"
+            android:id="@+id/textView117"
+            android:layout_below="@+id/textView116"
+            android:layout_alignLeft="@+id/textView116"
+            android:layout_alignStart="@+id/textView116"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pnamalengkap2"
+            android:layout_below="@+id/textView117"
+            android:layout_alignLeft="@+id/textView117"
+            android:layout_alignStart="@+id/textView117"
+            android:layout_alignRight="@+id/relativeLayout15"
+            android:layout_alignEnd="@+id/relativeLayout15"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="JENIS KELAMIN *"
+            android:id="@+id/textView118"
+            android:layout_below="@+id/pnamalengkap2"
+            android:layout_alignLeft="@+id/pnamalengkap2"
+            android:layout_alignStart="@+id/pnamalengkap2"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pjeniskelamin"
+            android:layout_alignTop="@+id/textView118"
+            android:layout_toRightOf="@+id/textView117"
+            android:layout_alignRight="@+id/pnamalengkap2"
+            android:layout_alignEnd="@+id/pnamalengkap2"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="ALAMAT TINGGAL *"
+            android:id="@+id/textView119"
+            android:layout_below="@+id/phubungan"
+            android:layout_alignLeft="@+id/phubungan"
+            android:layout_alignStart="@+id/phubungan"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/palamattinggal"
+            android:layout_below="@+id/textView119"
+            android:layout_alignLeft="@+id/textView119"
+            android:layout_alignStart="@+id/textView119"
+            android:layout_alignRight="@+id/pjeniskelamin"
+            android:layout_alignEnd="@+id/pjeniskelamin"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="NOMOR TELEPON RUMAH *"
+            android:id="@+id/textView120"
+            android:layout_below="@+id/palamattinggal"
+            android:layout_alignLeft="@+id/palamattinggal"
+            android:layout_alignStart="@+id/palamattinggal"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pnomorteleponrumah"
+            android:layout_below="@+id/textView120"
+            android:layout_alignRight="@+id/palamattinggal"
+            android:layout_alignEnd="@+id/palamattinggal"
+            android:layout_alignLeft="@+id/textView120"
+            android:layout_alignStart="@+id/textView120"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="NOMOR HP *"
+            android:id="@+id/textView121"
+            android:layout_below="@+id/pnomorteleponrumah"
+            android:layout_alignLeft="@+id/pnomorteleponrumah"
+            android:layout_alignStart="@+id/pnomorteleponrumah"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pnomorhp"
+            android:layout_below="@+id/textView121"
+            android:layout_alignRight="@+id/pnomorteleponrumah"
+            android:layout_alignEnd="@+id/pnomorteleponrumah"
+            android:layout_alignLeft="@+id/textView121"
+            android:layout_alignStart="@+id/textView121"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="LANJUTKAN"
+            android:id="@+id/lanjutkan"
+            android:background="@drawable/button_rounded"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/pnomorhp"
+            android:layout_marginTop="40dp"
+            android:layout_alignLeft="@+id/pnomorhp"
+            android:layout_alignStart="@+id/pnomorhp"
+            android:layout_alignRight="@+id/pjeniskelamin"
+            android:layout_alignEnd="@+id/pjeniskelamin" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/lanjutkan"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Butuh Bantuan?"
+                android:id="@+id/textView122"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="  HUBUNGI ERAGANO"
+                android:id="@+id/textView123"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/textView122"
+                android:layout_toEndOf="@+id/textView122" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="HUBUNGAN *"
+            android:id="@+id/textView63"
+            android:layout_below="@+id/pjeniskelamin"
+            android:layout_alignLeft="@+id/textView118"
+            android:layout_alignStart="@+id/textView118"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phubungan"
+            android:layout_below="@+id/textView63"
+            android:layout_alignLeft="@+id/textView63"
+            android:layout_alignStart="@+id/textView63"
+            android:layout_alignRight="@+id/pjeniskelamin"
+            android:layout_alignEnd="@+id/pjeniskelamin"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+    </ScrollView>

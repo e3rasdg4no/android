@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#f5f5f5">
+        <ImageView
+            android:id="@+id/imageInPesanan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tomat"/>
+        <View
+            android:id="@+id/lineBawah"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"/>
+        <RelativeLayout
+            android:id="@+id/isiDetail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ccffffff"
+            android:layout_above="@+id/lineBawah">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp">
+                <LinearLayout
+                    android:id="@+id/tengah2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="12dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/post_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:text="Bawang Merah" />
+                </LinearLayout>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/hijau"
+                    android:id="@+id/view7"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tengah2" />
+                <LinearLayout
+                    android:id="@+id/kanan2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp"
+                    android:layout_toRightOf="@+id/view7"
+                    android:gravity="left|center">
+                    <TextView
+                        android:id="@+id/rincianHarga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:text="25 Kg @ Rp. 8.000 , Total : Rp. 200.000" />
+                    <TextView
+                        android:id="@+id/rincianTanggal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#000000"
+                        android:text="22 Juli 2016 - Bluegrass, Jakarta"
+                        android:layout_marginTop="3dp"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

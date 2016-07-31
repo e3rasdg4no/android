@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/abudasar">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="800dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/hijau"
+        android:id="@+id/relativeLayout21">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="PEMBAYARAN"
+            android:id="@+id/textView12"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_below="@+id/relativeLayout21"
+        android:layout_alignParentBottom="false"
+        android:id="@+id/relativeLayout22">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Rekap Pembelian"
+            android:id="@+id/textView31"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"
+            android:textColor="#000000" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/abuview"
+            android:id="@+id/view2"
+            android:layout_below="@+id/textView31"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Produk / Jumlah"
+            android:id="@+id/textView148"
+            android:layout_alignTop="@+id/view2"
+            android:layout_alignLeft="@+id/textView31"
+            android:layout_alignStart="@+id/textView31"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Pilar F1 / 1 Pack\nPanex F1 / 1 Kilogram"
+            android:id="@+id/textView30"
+            android:layout_alignTop="@+id/textView148"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:textColor="#000000"
+            android:layout_marginBottom="20dp"
+            android:gravity="right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/abuview"
+            android:id="@+id/view3"
+            android:layout_below="@+id/textView30"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Tanggal Pemesanan"
+            android:id="@+id/textView149"
+            android:layout_below="@+id/view3"
+            android:layout_alignLeft="@+id/textView148"
+            android:layout_alignStart="@+id/textView148"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="03 Desember 2016"
+            android:id="@+id/tanggal_pemesanan"
+            android:layout_alignTop="@+id/textView149"
+            android:layout_alignRight="@+id/textView30"
+            android:layout_alignEnd="@+id/textView30"
+            android:textColor="#000000"
+            android:layout_marginBottom="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/relativeLayout22"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:id="@+id/relativeLayout23">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Data Pembeli"
+            android:id="@+id/textView151"
+            android:textColor="#000000"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/abuview"
+            android:id="@+id/view4"
+            android:layout_below="@+id/textView151"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Nama Pemesan"
+            android:id="@+id/textView152"
+            android:layout_below="@+id/view4"
+            android:layout_alignLeft="@+id/textView151"
+            android:layout_alignStart="@+id/textView151"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Faiz"
+            android:id="@+id/txtusername"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/textView152"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/abuview"
+            android:id="@+id/view5"
+            android:layout_below="@+id/txtusername"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Nomor Telepon"
+            android:id="@+id/textView154"
+            android:layout_below="@+id/view5"
+            android:layout_alignLeft="@+id/textView152"
+            android:layout_alignStart="@+id/textView152"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="085959739382"
+            android:id="@+id/txtnotelepon"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/textView154"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/abuview"
+            android:id="@+id/view6"
+            android:layout_below="@+id/textView154"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Alamat"
+            android:id="@+id/textView156"
+            android:layout_below="@+id/view6"
+            android:layout_alignLeft="@+id/textView154"
+            android:layout_alignStart="@+id/textView154"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Jl. Jenderal Sudirman "
+            android:id="@+id/txtalamat"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/textView156"
+            android:layout_alignRight="@+id/txtnotelepon"
+            android:layout_alignEnd="@+id/txtnotelepon"
+            android:layout_toEndOf="@+id/textView151"
+            android:layout_toRightOf="@+id/textView151"
+            android:layout_alignParentRight="false"
+            android:gravity="right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Total Bayar"
+        android:id="@+id/textView158"
+        android:layout_below="@+id/relativeLayout23"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="IDR 95000"
+        android:id="@+id/total_harga"
+        android:layout_alignTop="@+id/textView158"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/textView158"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pembayaran"
+            android:id="@+id/button2"
+            android:layout_centerVertical="true"
+            android:background="@drawable/button_rounded"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>

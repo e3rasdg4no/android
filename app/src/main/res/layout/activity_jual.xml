@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.jual.JualActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="900dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="left|top"
+        android:background="@color/hijau"
+        android:id="@+id/relativeLayout7"
+        android:layout_below="@+id/relativeLayout10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="JUAL HASIL PANEN"
+            android:id="@+id/textView5"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="NAMA PRODUK"
+        android:id="@+id/textView35"
+        android:layout_below="@+id/relativeLayout7"
+        android:layout_alignLeft="@+id/relativeLayout7"
+        android:layout_alignStart="@+id/relativeLayout7"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/namaProduk"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_below="@+id/textView35"
+        android:layout_alignLeft="@+id/textView35"
+        android:layout_alignStart="@+id/textView35"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="TANGGAL PANEN"
+        android:id="@+id/textView49"
+        android:layout_below="@+id/namaProduk"
+        android:layout_alignLeft="@+id/namaProduk"
+        android:layout_alignStart="@+id/namaProduk"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tanggalPanen"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_below="@+id/textView49"
+        android:layout_alignLeft="@+id/namaProduk"
+        android:layout_alignStart="@+id/namaProduk"
+        android:layout_alignRight="@+id/namaProduk"
+        android:layout_alignEnd="@+id/namaProduk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="JUMLAH PER SATUAN"
+        android:id="@+id/textView50"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignLeft="@+id/textView58"
+        android:layout_alignStart="@+id/textView58"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/jumlah"
+        android:maxLines="1"
+        android:inputType="number"
+        android:layout_below="@+id/textView50"
+        android:layout_alignRight="@+id/tanggalPanen"
+        android:layout_alignEnd="@+id/tanggalPanen"
+        android:layout_alignLeft="@+id/textView50"
+        android:layout_alignStart="@+id/textView50" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="HARGA PER SATUAN"
+        android:id="@+id/textView51"
+        android:layout_below="@+id/jumlah"
+        android:layout_alignLeft="@+id/jumlah"
+        android:layout_alignStart="@+id/jumlah"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/harga"
+        android:maxLines="1"
+        android:inputType="number"
+        android:layout_below="@+id/textView51"
+        android:layout_alignRight="@+id/jumlah"
+        android:layout_alignEnd="@+id/jumlah"
+        android:layout_alignLeft="@+id/textView51"
+        android:layout_alignStart="@+id/textView51" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="FOTO PANEN"
+            android:id="@+id/textView52"
+            android:layout_below="@+id/harga"
+            android:layout_alignLeft="@+id/harga"
+            android:layout_alignStart="@+id/harga"
+            android:layout_marginTop="10dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/gambarTampung"
+            android:src="@drawable/camera"
+            android:background="#e9e9e9"
+            android:layout_below="@+id/textView55"
+            android:layout_alignRight="@+id/harga"
+            android:layout_alignEnd="@+id/harga"
+            android:layout_alignLeft="@+id/textView55"
+            android:layout_alignStart="@+id/textView55"
+            android:layout_marginTop="10dp"
+            android:padding="50dp" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="JUAL"
+            android:id="@+id/upload"
+            android:layout_below="@+id/gambarTampung"
+            android:background="@drawable/button_rounded"
+            android:textColor="#ffffff"
+            android:layout_marginTop="40dp"
+            android:layout_alignLeft="@+id/relativeLayout8"
+            android:layout_alignStart="@+id/relativeLayout8"
+            android:layout_alignRight="@+id/relativeLayout8"
+            android:layout_alignEnd="@+id/relativeLayout8" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/upload"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Butuh Bantuan?"
+                android:id="@+id/textView53"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="  HUBUNGI ERAGANO"
+                android:id="@+id/textView54"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/textView53"
+                android:layout_toEndOf="@+id/textView53" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Tekan Gambar dibawah \nuntuk memasukkan gambar"
+            android:id="@+id/textView55"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/textView52"
+            android:layout_alignLeft="@+id/textView52"
+            android:layout_alignStart="@+id/textView52"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic"
+            android:textColor="@color/hijau" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:id="@+id/relativeLayout10"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#efefef">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView10"
+                android:src="@drawable/logowarna"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/bantuanfix"
+                android:paddingBottom="8dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:id="@+id/imageBantu"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/iconback"
+                android:paddingBottom="8dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:id="@+id/imageback"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="SATUAN"
+            android:id="@+id/textView58"
+            android:layout_below="@+id/tanggalPanen"
+            android:layout_alignLeft="@+id/tanggalPanen"
+            android:layout_alignStart="@+id/tanggalPanen"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_below="@+id/textView58"
+            android:layout_alignLeft="@+id/textView58"
+            android:layout_alignStart="@+id/textView58"
+            android:layout_alignRight="@+id/jumlah"
+            android:layout_alignEnd="@+id/jumlah" />
+
+    </RelativeLayout>
+</ScrollView>

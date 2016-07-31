@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="header1">
+        <item>BELI KEBUTUHAN BERTANI</item>
+        <item>JADWAL BERTANI</item>
+        <item>JUAL HASIL PANEN</item>
+        <item>ASURANSI</item>
+        <item>PINJAMAN LUNAK</item>
+        <item>INFORMASI PERTANIAN</item>
+        <item>KINERJA PETANI</item>
+    </string-array>
+
+    <string-array name="header2">
+        <item>Pembelian pupuk, benih &amp; bahan</item>
+        <item>Lihat jadwal bertani-ku &amp; ikuti jadwal tanam unutk hasil yang lebih baik</item>
+        <item>Jual hasil panen dengan cepat</item>
+        <item>Klaim proteksi pertanian pada saat panen gagal</item>
+        <item>Dapatkan Pinjaman Lunak Untuk Membantu Anda</item>
+        <item>Lihat informasi harga &amp; informasi pertanian</item>
+        <item>Pantau perkembangan kinerja anda</item>
+    </string-array>
+</resources>

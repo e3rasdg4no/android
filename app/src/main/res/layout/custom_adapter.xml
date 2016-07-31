@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#b6b6b6">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff">
+
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="13/7/2016"
+            android:id="@+id/txt_tanggal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/txt_angin"
+        android:gravity="center_vertical"
+        android:layout_alignTop="@+id/txt_kondisi"
+        android:layout_marginRight="10dp"
+        android:textSize="11sp" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Badai Petir"
+            android:id="@+id/txt_kondisi"
+            android:textSize="16sp"
+            android:layout_alignTop="@+id/txt_icon"
+            android:layout_toRightOf="@+id/txt_icon"
+            android:layout_toEndOf="@+id/txt_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Maks : 29ºC"
+            android:id="@+id/txt_maks"
+            android:textSize="11sp"
+            android:layout_below="@+id/txt_kondisi"
+            android:layout_alignLeft="@+id/txt_kondisi"
+            android:layout_alignStart="@+id/txt_kondisi"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Min : 21ºC"
+            android:id="@+id/txt_min"
+            android:textSize="11sp"
+            android:layout_below="@+id/txt_maks"
+            android:layout_alignLeft="@+id/txt_maks"
+            android:layout_alignStart="@+id/txt_maks"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Kelembaban : 82 %"
+            android:id="@+id/txt_lembab"
+            android:textSize="11sp"
+            android:layout_alignTop="@+id/txt_maks"
+            android:layout_toRightOf="@+id/txt_maks"
+            android:layout_toEndOf="@+id/txt_maks"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Angin : 4 m/j"
+            android:id="@+id/txt_angin"
+            android:textSize="11sp"
+            android:layout_below="@+id/txt_lembab"
+            android:layout_alignLeft="@+id/txt_lembab"
+            android:layout_alignStart="@+id/txt_lembab" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="H"
+            android:id="@+id/txt_icon"
+            android:textSize="30sp"
+            android:gravity="center_vertical|center|center_horizontal"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

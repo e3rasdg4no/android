@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.faiz.weatherapp.MainActivity"
+    android:background="#ffffff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Hari ini Cerah Berawan"
+        android:id="@+id/txt_hariini"
+        android:textColor="#62C16F"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:layout_above="@+id/txt_nowtemp"
+        android:layout_toLeftOf="@+id/txt_icon"
+        android:layout_toStartOf="@+id/txt_icon"
+        android:layout_alignTop="@+id/txt_icon">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Maks : 35ºC"
+            android:id="@+id/txt_maxtemp"
+            android:gravity="end"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Min : 25ºC"
+            android:id="@+id/txt_mintemp"
+            android:gravity="end"
+            android:layout_below="@+id/txt_maxtemp" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="28ºC"
+        android:id="@+id/txt_nowtemp"
+        android:textSize="28sp"
+        android:layout_below="@+id/txt_icon"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Bandung, ID"
+        android:id="@+id/txt_daerah"
+        android:textSize="20sp"
+        android:layout_below="@+id/txt_nowtemp"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:layout_below="@+id/txt_daerah"
+        android:gravity="center"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Kelembaban"
+            android:id="@+id/textView6"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Tekanan"
+            android:id="@+id/textView7"
+            android:layout_below="@+id/textView6"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Angin"
+            android:id="@+id/textView8"
+            android:layout_below="@+id/textView7"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_alignStart="@+id/textView7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=": 81%"
+            android:id="@+id/txt_lembab"
+            android:layout_alignTop="@+id/textView6"
+            android:layout_toRightOf="@+id/textView6"
+            android:layout_toEndOf="@+id/textView6"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=": 968.48 hPa"
+            android:id="@+id/txt_tekanan"
+            android:layout_below="@+id/txt_lembab"
+            android:layout_alignLeft="@+id/txt_lembab"
+            android:layout_alignStart="@+id/txt_lembab" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=": 1.41 km/h"
+            android:id="@+id/txt_angin"
+            android:layout_below="@+id/txt_tekanan"
+            android:layout_alignLeft="@+id/txt_tekanan"
+            android:layout_alignStart="@+id/txt_tekanan" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="H"
+        android:id="@+id/txt_icon"
+        android:gravity="center"
+        android:textSize="60sp"
+        android:layout_below="@+id/txt_hariini"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

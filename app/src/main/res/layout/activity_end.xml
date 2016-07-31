@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.ecommerce.EndActivity"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView17"
+        android:src="@drawable/logowarna"
+        android:layout_above="@+id/textView153"
+        android:layout_alignLeft="@+id/textView153"
+        android:layout_alignStart="@+id/textView153"
+        android:layout_alignRight="@+id/textView153"
+        android:layout_alignEnd="@+id/textView153" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Terima Kasih Atas Pesanannya!"
+        android:id="@+id/textView153"
+        android:layout_above="@+id/textView155"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/hijau"
+        android:textStyle="italic"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Dibayar secara tunai di tempat Anda, atau apabila Anda terdaftar program pinjaman kami, tagihan Anda dibayarkan secara otomatis"
+        android:id="@+id/textView155"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Pesanan anda atas nama XXX Sejumlah XXX akan segera kami proses\nJika butuh bantuan silahkan hubungi kami"
+        android:id="@+id/textView157"
+        android:gravity="center"
+        android:layout_below="@+id/textView155"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="RINCIAN ORDER"
+        android:id="@+id/btnrincianorder"
+        android:background="@drawable/button_beli"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/textView157"
+        android:layout_alignLeft="@+id/textView157"
+        android:layout_alignStart="@+id/textView157"
+        android:layout_marginTop="30dp"
+        android:layout_toLeftOf="@+id/space6"
+        android:layout_toStartOf="@+id/space6"
+        android:textSize="12sp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Kembali Berbelanja"
+        android:id="@+id/btnkembaliberbelanja"
+        android:layout_alignBottom="@+id/btnrincianorder"
+        android:layout_alignRight="@+id/textView157"
+        android:layout_alignEnd="@+id/textView157"
+        android:background="@drawable/button_rounded"
+        android:layout_toEndOf="@+id/space6"
+        android:layout_toRightOf="@+id/space6"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space6" />
+</RelativeLayout>

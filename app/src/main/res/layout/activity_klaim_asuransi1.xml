@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.fragment.AsuransiFragment"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="720dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="720dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="left|top"
+            android:background="@color/hijau">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="PENGAJUAN KLAIM ASURANSI"
+                android:id="@+id/textView7"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="46dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="NAMA PETANI"
+                android:id="@+id/textView13"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nama_petani"
+                android:layout_below="@+id/textView13"
+                android:layout_alignLeft="@+id/textView13"
+                android:layout_alignStart="@+id/textView13"
+                android:maxLines="1"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:paddingBottom="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="LUAS LAHAN (HA) YANG DI ASURANSIKAN"
+                android:id="@+id/textView14"
+                android:layout_below="@+id/nama_petani"
+                android:layout_alignLeft="@+id/nama_petani"
+                android:layout_alignStart="@+id/nama_petani"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/luas_lahan"
+                android:layout_below="@+id/textView14"
+                android:layout_alignLeft="@+id/textView14"
+                android:layout_alignStart="@+id/textView14"
+                android:maxLines="1"
+                android:inputType="number"
+                android:hint="Ketik kerusakan dari kebun tertanggung"
+                android:textSize="16dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignRight="@+id/nama_petani"
+                android:layout_alignEnd="@+id/nama_petani" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="JENIS TANAMAN YANG DIASURANSIKAN"
+                android:id="@+id/textView15"
+                android:layout_below="@+id/luas_lahan"
+                android:layout_alignLeft="@+id/luas_lahan"
+                android:layout_alignStart="@+id/luas_lahan"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jenis_tanaman"
+                android:layout_below="@+id/textView15"
+                android:layout_alignRight="@+id/luas_lahan"
+                android:layout_alignEnd="@+id/luas_lahan"
+                android:layout_alignLeft="@+id/textView15"
+                android:layout_alignStart="@+id/textView15"
+                android:maxLines="1"
+                android:inputType="text"
+                android:hint="Ketik jenis tanaman yang diasuransikan"
+                android:textSize="16dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="TANGGAL MULAI TANAM"
+                android:id="@+id/textView16"
+                android:layout_below="@+id/jenis_tanaman"
+                android:layout_alignLeft="@+id/jenis_tanaman"
+                android:layout_alignStart="@+id/jenis_tanaman"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tanggal_mulai"
+                android:maxLines="1"
+                android:inputType="date"
+                android:textSize="16dp"
+                android:paddingBottom="10dp"
+                android:layout_below="@+id/textView16"
+                android:layout_alignRight="@+id/jenis_tanaman"
+                android:layout_alignEnd="@+id/jenis_tanaman"
+                android:layout_alignLeft="@+id/textView16"
+                android:layout_alignStart="@+id/textView16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="LOKASI"
+                android:id="@+id/textView17"
+                android:layout_below="@+id/tanggal_mulai"
+                android:layout_alignLeft="@+id/tanggal_mulai"
+                android:layout_alignStart="@+id/tanggal_mulai"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lokasi"
+                android:layout_below="@+id/textView17"
+                android:layout_alignRight="@+id/tanggal_mulai"
+                android:layout_alignEnd="@+id/tanggal_mulai"
+                android:layout_alignLeft="@+id/textView17"
+                android:layout_alignStart="@+id/textView17"
+                android:maxLines="1"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:paddingBottom="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lokasi"
+                android:layout_alignLeft="@+id/lokasi"
+                android:layout_alignStart="@+id/lokasi"
+                android:layout_marginTop="10dp"
+                android:background="#f8f8f8"
+                android:id="@+id/relativeLayout2"
+                android:layout_alignRight="@+id/jenis_tanaman"
+                android:layout_alignEnd="@+id/jenis_tanaman">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="DENGAN INI SAYA MENYATAKAN BAHWA KETERANGAN YANG TELAH DIMASUKKAN ADALAH BENAR"
+                    android:id="@+id/textView32"
+                    android:layout_toRightOf="@+id/checkBox"
+                    android:layout_toEndOf="@+id/checkBox"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+            </RelativeLayout>
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="LANJUTKAN"
+                android:id="@+id/lanjutkan"
+                android:background="@drawable/button_rounded"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/tandatangan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@+id/lanjutkan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/relativeLayout4">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Butuh Bantuan?"
+                    android:id="@+id/textView18"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="  HUBUNGI ERAGANO"
+                    android:id="@+id/textView19"
+                    android:textStyle="bold"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/textView18"
+                    android:layout_toEndOf="@+id/textView18" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="TANDA TANGAN"
+                android:id="@+id/textView34"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_alignLeft="@+id/relativeLayout2"
+                android:layout_alignStart="@+id/relativeLayout2"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tandatangan"
+                android:maxLines="1"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:paddingBottom="10dp"
+                android:layout_below="@+id/textView34"
+                android:layout_alignRight="@+id/relativeLayout2"
+                android:layout_alignEnd="@+id/relativeLayout2"
+                android:layout_alignLeft="@+id/textView34"
+                android:layout_alignStart="@+id/textView34" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+    </RelativeLayout>
+</ScrollView>

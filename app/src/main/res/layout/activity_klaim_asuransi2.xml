@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.asuransi.klaim_asuransi.KlaimAsuransi2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="left|top"
+        android:background="@color/hijau"
+        android:id="@+id/relativeLayout3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="PENGAJUAN KLAIM ASURANSI"
+            android:id="@+id/textView7"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Terima Kasih !"
+        android:id="@+id/textView10"
+        android:textColor="@color/hijau"
+        android:textStyle="bold|italic"
+        android:textSize="28dp"
+        android:layout_below="@+id/relativeLayout3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Terima Kasih atas Klaim Proteksi Anda. \n\n Terima Kasih karena telah percaya pada kami dan menjadi bagian dari keluarga Eragano. \n\n Kami akan membantu pengurusuan klaim proteksi saudara. Saudara akan menerima pemberitahuan setelah klaim ini diterima dan dicairkan. \n\n Mohon bersabar dan memberi tahu kami jika ada hal lain yang ingin saudara sampaikan. \n\n Kami akan selalu berusaha yang terbaik untuk mengembangkan usaha anda yang berkelanjutan!\n Kontak kami tanpa ragu-ragu jika saudara membutuhkan saran atau bantuan "
+        android:id="@+id/textView11"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Kembali Ke Menu Utama"
+        android:id="@+id/lanjutkan"
+        android:background="@drawable/button_rounded"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+</RelativeLayout>

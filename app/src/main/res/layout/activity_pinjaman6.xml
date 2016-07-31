@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eragano.eraganoapps.fragment.AsuransiFragment"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="920dp"
+        android:background="#ffffff">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/frameLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="left|top"
+                android:background="@color/hijau">
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="left|top"
+                android:background="@color/hijau">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="PENGAJUAN PINJAMAN (LANGKAH 6)"
+                    android:id="@+id/textView7"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#e4e4e4"
+            android:id="@+id/relativeLayout14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/frameLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DATA KEUANGAN CALON DEBITUR"
+                android:id="@+id/textView71"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="* wajib diisi"
+            android:id="@+id/textView116"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/relativeLayout14"
+            android:layout_alignLeft="@+id/relativeLayout14"
+            android:layout_alignStart="@+id/relativeLayout14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="PENGHASILAN PER BULAN (RP) *"
+            android:id="@+id/textView124"
+            android:layout_below="@+id/textView116"
+            android:layout_alignLeft="@+id/textView116"
+            android:layout_alignStart="@+id/textView116"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ppenghasilanperbulan"
+            android:layout_below="@+id/textView124"
+            android:layout_alignLeft="@+id/textView124"
+            android:layout_alignStart="@+id/textView124"
+            android:layout_alignRight="@+id/relativeLayout14"
+            android:layout_alignEnd="@+id/relativeLayout14"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TOTAL BIAYA (RP) *"
+            android:id="@+id/textView125"
+            android:layout_below="@+id/ppenghasilanperbulan"
+            android:layout_alignLeft="@+id/ppenghasilanperbulan"
+            android:layout_alignStart="@+id/ppenghasilanperbulan"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ptotalbiaya"
+            android:layout_below="@+id/textView125"
+            android:layout_alignRight="@+id/ppenghasilanperbulan"
+            android:layout_alignEnd="@+id/ppenghasilanperbulan"
+            android:layout_alignLeft="@+id/textView125"
+            android:layout_alignStart="@+id/textView125"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="PROYEKSI KEUNTUNGAN (RP)"
+            android:id="@+id/textView126"
+            android:layout_below="@+id/ptotalbiaya"
+            android:layout_alignLeft="@+id/ptotalbiaya"
+            android:layout_alignStart="@+id/ptotalbiaya"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/pproyeksikeuntungan"
+            android:layout_below="@+id/textView126"
+            android:layout_alignRight="@+id/ptotalbiaya"
+            android:layout_alignEnd="@+id/ptotalbiaya"
+            android:layout_alignLeft="@+id/textView126"
+            android:layout_alignStart="@+id/textView126"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="PENGHASILAN LAINNYA (RP)"
+            android:id="@+id/textView127"
+            android:layout_below="@+id/pproyeksikeuntungan"
+            android:layout_alignLeft="@+id/pproyeksikeuntungan"
+            android:layout_alignStart="@+id/pproyeksikeuntungan"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ppenghasilanlainnya"
+            android:layout_below="@+id/textView127"
+            android:layout_alignRight="@+id/pproyeksikeuntungan"
+            android:layout_alignEnd="@+id/pproyeksikeuntungan"
+            android:layout_alignLeft="@+id/textView127"
+            android:layout_alignStart="@+id/textView127"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TOTAL PINJAMAN LAIN (RP)"
+            android:id="@+id/textView128"
+            android:layout_below="@+id/ppenghasilanlainnya"
+            android:layout_alignLeft="@+id/ppenghasilanlainnya"
+            android:layout_alignStart="@+id/ppenghasilanlainnya"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ptotalpinjamanlain"
+            android:layout_below="@+id/textView128"
+            android:layout_alignRight="@+id/ppenghasilanlainnya"
+            android:layout_alignEnd="@+id/ppenghasilanlainnya"
+            android:layout_alignLeft="@+id/textView128"
+            android:layout_alignStart="@+id/textView128"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="SISA WAKTU ANGSURAN (BULAN)"
+            android:id="@+id/textView129"
+            android:layout_below="@+id/ptotalpinjamanlain"
+            android:layout_alignLeft="@+id/ptotalpinjamanlain"
+            android:layout_alignStart="@+id/ptotalpinjamanlain"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/psisawaktuangsuran"
+            android:layout_below="@+id/textView129"
+            android:layout_alignRight="@+id/ptotalpinjamanlain"
+            android:layout_alignEnd="@+id/ptotalpinjamanlain"
+            android:layout_alignLeft="@+id/textView129"
+            android:layout_alignStart="@+id/textView129"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="ANGSURAN PINJAMAN LAIN (RP/BULAN)"
+            android:id="@+id/textView130"
+            android:layout_below="@+id/psisawaktuangsuran"
+            android:layout_alignLeft="@+id/psisawaktuangsuran"
+            android:layout_alignStart="@+id/psisawaktuangsuran"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/pangsuranpinjamanlain"
+            android:layout_below="@+id/textView130"
+            android:layout_alignRight="@+id/psisawaktuangsuran"
+            android:layout_alignEnd="@+id/psisawaktuangsuran"
+            android:layout_alignLeft="@+id/textView130"
+            android:layout_alignStart="@+id/textView130"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TOTAL PENGHASILAN (RP/BULAN)"
+            android:id="@+id/textView131"
+            android:layout_below="@+id/pangsuranpinjamanlain"
+            android:layout_alignLeft="@+id/pangsuranpinjamanlain"
+            android:layout_alignStart="@+id/pangsuranpinjamanlain"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/pangsuranpinjamanlain"
+            android:layout_alignEnd="@+id/pangsuranpinjamanlain" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ptotalpenghasilan"
+            android:layout_below="@+id/textView131"
+            android:layout_alignRight="@+id/pangsuranpinjamanlain"
+            android:layout_alignEnd="@+id/pangsuranpinjamanlain"
+            android:layout_alignLeft="@+id/textView131"
+            android:layout_alignStart="@+id/textView131"
+            android:maxLines="1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="PEMBAYARAN\nANGSURAN\nMELALUI\nAUTO DEBET *"
+            android:id="@+id/textView132"
+            android:layout_below="@+id/ptotalpenghasilan"
+            android:layout_alignLeft="@+id/ptotalpenghasilan"
+            android:layout_alignStart="@+id/ptotalpenghasilan"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerautodebet"
+            android:layout_alignTop="@+id/textView132"
+            android:layout_toRightOf="@+id/textView132"
+            android:layout_alignRight="@+id/ptotalpenghasilan"
+            android:layout_alignEnd="@+id/ptotalpenghasilan"
+            android:layout_marginLeft="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="LANJUTKAN"
+            android:id="@+id/lanjutkan"
+            android:background="@drawable/button_rounded"
+            android:textColor="#ffffff"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/textView132"
+            android:layout_alignLeft="@+id/textView132"
+            android:layout_alignStart="@+id/textView132"
+            android:layout_alignRight="@+id/spinnerautodebet"
+            android:layout_alignEnd="@+id/spinnerautodebet" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/lanjutkan"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Butuh Bantuan?"
+                android:id="@+id/textView133"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="  HUBUNGI ERAGANO"
+                android:id="@+id/textView134"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/textView133"
+                android:layout_toEndOf="@+id/textView133" />
+        </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
