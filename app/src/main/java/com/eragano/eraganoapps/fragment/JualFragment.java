@@ -77,5 +77,7 @@ public class JualFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
         tabs.setViewPager(viewPager);
+
+        //
     }
 }
