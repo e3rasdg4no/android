@@ -7,7 +7,10 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -60,7 +63,7 @@ public class JualFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_jual, container, false);
 
-        tabs= (SmartTabLayout)view.findViewById(R.id.tabJual);
+        tabs= (SmartTabLayout) view.findViewById(R.id.tabJual);
         viewPager= (ViewPager)view.findViewById(R.id.viewPagerJual);
 
         setupViewPagerAndTab();
