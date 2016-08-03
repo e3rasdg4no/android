@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,11 +15,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
+import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,9 +35,18 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.eragano.eraganoapps.MainActivity;
 import com.eragano.eraganoapps.R;
+import com.eragano.eraganoapps.helper.HelperApp;
 import com.eragano.eraganoapps.jual.camera.AndroidMultiPartEntity;
 import com.eragano.eraganoapps.jual.camera.Config;
 
@@ -47,12 +60,15 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -66,9 +82,10 @@ import javax.mail.internet.MimeMessage;
 public class InputKinerjaActivity extends Activity {
 
     // Camera activity request codes
-    private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
+    private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 1;
 
     public static final int MEDIA_TYPE_IMAGE = 1;
+    private int PICK_IMAGE_REQUEST = 1;
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private Uri fileUri; // file url to store image/video
@@ -87,10 +104,13 @@ public class InputKinerjaActivity extends Activity {
     SimpleDateFormat dateFormat;
     long totalSize = 0;
 
+    String UPLOAD_URL = "http://103.236.201.252/android/performa/upload_file.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_kinerja2);
+        cacheImage(savedInstanceState);
         ImageButton imgback = (ImageButton) findViewById(R.id.imageButton3);
         imgback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,8 +185,8 @@ public class InputKinerjaActivity extends Activity {
             public void onClick(View v) {
                 cekisi();
                 if(cekisi().equals("true")) {
-                    sendEmail();
-                    new UploadFileToServer().execute();
+                    //sendEmail();
+                    uploadImage();
                 }
             }
         });
@@ -224,14 +244,43 @@ public class InputKinerjaActivity extends Activity {
         }
     }
     private void captureImage() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
+        /*Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-
+        intent.putExtra("return-data", true);
         // start the image capture Intent
-        startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
+        startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);*/
+
+
+
+        if(Build.VERSION.SDK_INT < 19){
+            ContentValues values = new ContentValues();
+            values.put(MediaStore.Images.Media.TITLE, "New Picture");
+            values.put(MediaStore.Images.Media.DESCRIPTION, "From Your Camera");
+            fileUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+            Intent intent    = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
+            intent.putExtra("return-data", true);
+            startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
+        }
+        else
+        {
+            Intent intent    = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                String photoFile = null;
+                try {
+                    photoFile = HelperApp.createImageFileCameraDefault();
+                    fileUri = Uri.parse(photoFile);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                if (photoFile != null) {
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.parse(photoFile));
+                    startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
+                }
+
+            }
+        }
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -242,30 +291,28 @@ public class InputKinerjaActivity extends Activity {
         outState.putParcelable("file_uri", fileUri);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        // get the file url
-        fileUri = savedInstanceState.getParcelable("file_uri");
-    }
+   private void cacheImage(Bundle savedInstanceState)
+   {
+       if(savedInstanceState != null)
+       {
+           fileUri = savedInstanceState.getParcelable("file_uri");
+       }
+   }
     /**
      * Receiving activity result method will be called after closing the camera
      * */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         // if the result is capturing Image
         if (resultCode == RESULT_OK) {
             // successfully captured the image
             // launching upload activity
             launchUploadActivity(true);
-
-
-        } else if (resultCode == RESULT_CANCELED) {
-            // user cancelled Image capture
-            Toast.makeText(getApplicationContext(),
-                    "User cancelled image capture", Toast.LENGTH_SHORT)
-                    .show();
+            //Uri f = data.getData();
+            //applyBitmap(f);
+            //Toast.makeText(InputKinerjaActivity.this, data.toString(), Toast.LENGTH_SHORT).show();
 
         } else {
             // failed to capture image
@@ -279,8 +326,8 @@ public class InputKinerjaActivity extends Activity {
         BitmapFactory.Options options = new BitmapFactory.Options();
         // down sizing image as it throws OutOfMemory Exception for larger
         // images
-        options.inSampleSize = 15;
-        Bitmap bitmap2 = BitmapFactory.decodeFile(fileUri.getPath(), options);
+        options.inSampleSize = 1;
+        bitmap = BitmapFactory.decodeFile(fileUri.getPath(), options);
         filePath = fileUri.getPath();
         Glide.with(InputKinerjaActivity.this).load(fileUri).into(gambar);
         //gambar.setImageBitmap(bitmap2);
@@ -332,7 +379,87 @@ public class InputKinerjaActivity extends Activity {
         return mediaFile;
     }
 
-    private class UploadFileToServer extends AsyncTask<Void, Integer, String> {
+    public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
+    private void uploadImage(){
+        //Showing the progress dialog
+        final ProgressDialog loading;
+        loading = new ProgressDialog(InputKinerjaActivity.this);
+        loading.setMessage("Data sedang di proses");
+        loading.setCancelable(false);
+        loading.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        //Disimissing the progress dialog
+                        loading.dismiss();
+                        //Showing toast message of the response
+                        Toast.makeText(InputKinerjaActivity.this, s, Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        //Dismissing the progress dialog
+                        loading.dismiss();
+                        //Showing toast
+                        Toast.makeText(InputKinerjaActivity.this, volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String > getParams() throws AuthFailureError {
+                //Converting Bitmap to String
+                String image = getStringImage(bitmap);
+
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+                final String formattedDate = String.valueOf(c.getTime().getHours())+String.valueOf(c.getTime().getMinutes());
+
+                //Getting Image Name
+                String user = sp.getString("User",null);
+                String name = nama.getText().toString().trim();
+                String jns = jenis.getText().toString().trim();
+                String tgl = tanggal.getText().toString().trim();
+                String ham = hambatan.getSelectedItem().toString();
+                String ket = keterangan.getText().toString().trim();
+                String jam = formattedDate;
+                //Creating parameters
+                Map<String,String> params = new Hashtable<String, String>();
+
+                //Adding parameters
+                params.put("user", user);
+                params.put("image", image);
+                params.put("nama_petani", name);
+                params.put("tanggal_pelaporan", tgl);
+                params.put("jenis_tanaman", jns);
+                params.put("hambatan", ham);
+                params.put("keterangan", ket);
+                params.put("jam", jam);
+
+                //returning parameters
+                return params;
+            }
+        };
+
+        //Creating a Request Queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                0,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        //Adding request to the queue
+        requestQueue.add(stringRequest);
+    }
+
+   /* private class UploadFileToServer extends AsyncTask<Void, Integer, String> {
         ProgressDialog dialog;
         @Override
         protected void onPreExecute() {
@@ -435,12 +562,12 @@ public class InputKinerjaActivity extends Activity {
             super.onPostExecute(result);
         }
 
-    }
+    }*/
 
     /**
      * Method to show alert dialog
      * */
-    private void showAlert(String message) {
+    /*private void showAlert(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Kinerja anda sudah tercatat")
                 .setCancelable(false)
@@ -451,7 +578,7 @@ public class InputKinerjaActivity extends Activity {
                 });
         AlertDialog alert = builder.create();
         alert.show();
-    }
+    }*/
 
     //SENT EMAIL NOTIFICATION
     private void sendEmail() {
@@ -572,6 +699,20 @@ public class InputKinerjaActivity extends Activity {
                 e.printStackTrace();
             }
             return null;
+        }
+    }
+
+    private void applyBitmap(Uri filePath)
+    {
+        if(filePath != null)
+        {
+            File f = new File(filePath.getPath());
+            String finalPath = f.getAbsolutePath();
+            Toast.makeText(InputKinerjaActivity.this, finalPath, Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(InputKinerjaActivity.this, "NULL FILEPATH", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -90,6 +91,7 @@ public class JualActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jual);
 
+        cacheImage(savedInstanceState);
         ImageButton imgback = (ImageButton) findViewById(R.id.imageback);
         imgback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,15 +262,23 @@ public class JualActivity extends AppCompatActivity implements View.OnClickListe
             Uri filePath = data.getData();
             try {
                 //Getting the Bitmap from Gallery
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                /*bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 //Setting the Bitmap to ImageView
                 Log.d("TES LOG",filePath.getPath());
                 imageView.setImageBitmap(bitmap);
-                imageView.setPadding(1,1,1,1);
-            } catch (IOException e) {
-                e.printStackTrace();
+                imageView.setPadding(1,1,1,1);*/
+                applyBitmap(filePath);
+            } catch (Exception e) {
+                Toast.makeText(JualActivity.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void applyBitmap(Uri filePath)
+    {
+        File f = new File(filePath.getPath());
+        String finalPath = f.getAbsolutePath();
+        Toast.makeText(JualActivity.this, finalPath, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -278,4 +288,17 @@ public class JualActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putParcelable("uriFile", fileUri);
+    }
+
+    private void cacheImage(Bundle saveInstance)
+    {
+        if(saveInstance != null)
+        {
+            fileUri = saveInstance.getParcelable("uriFile");
+        }
+    }
 }
