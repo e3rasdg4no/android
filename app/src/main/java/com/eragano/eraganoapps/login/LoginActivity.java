@@ -1,13 +1,17 @@
 package com.eragano.eraganoapps.login;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.eragano.eraganoapps.MainActivity;
 import com.eragano.eraganoapps.R;
 import com.eragano.eraganoapps.penampung.TokenUser;
+import com.eragano.eraganoapps.view.UIText;
 import com.google.gson.Gson;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
@@ -34,30 +39,27 @@ import java.util.List;
 
 
 public class LoginActivity extends Activity implements AsyncResponse, View.OnClickListener{
-
-    private EditText UserName;
-    private EditText Password;
-
     public static final String USER_NAME = "USERNAME";
     public static final String URL = "http://103.236.201.252/android/token_user2.php";
-    List<TokenUser> posts = new ArrayList<>();
+    private List<TokenUser> posts = new ArrayList<>();
 
-    EditText txtusername;
-    EditText txtpassword;
+    private EditText txtusername= null;
+    private EditText txtpassword= null;
+    private UIText lupaPassword= null;
 
-    SharedPreferences sp;
-    SharedPreferences.Editor editor;
-    Exception exceptionToBeThrown;
+    private SharedPreferences sp= null;
+    private SharedPreferences.Editor editor= null;
 
-    String ip;
-    String web;
+    private String web;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         sp = getSharedPreferences("SP", Context.MODE_PRIVATE);
         editor = sp.edit();
+
         if (sp.getBoolean("Status", false) == true) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
@@ -75,6 +77,10 @@ public class LoginActivity extends Activity implements AsyncResponse, View.OnCli
 
             txtusername = (EditText) findViewById(R.id.usernameLogin);
             txtpassword = (EditText) findViewById(R.id.passwordLogin);
+            lupaPassword= (UIText) findViewById(R.id.lupaKataKunci);
+
+            lupaPassword.defaultFont();
+            lupaPassword.setOnClickListener(this);
             btnLogin.setOnClickListener(this);
             }
         }
@@ -97,15 +103,36 @@ public class LoginActivity extends Activity implements AsyncResponse, View.OnCli
 
         @Override
         public void onClick (View v){
-            HashMap postData = new HashMap();
-            postData.put("mobile", "android");
-            postData.put("txtUsername", txtusername.getText().toString());
-            postData.put("txtPassword", txtpassword.getText().toString());
-            String triman = txtusername.getText().toString().replace(" ", "%20");
-            web = URL+"?user="+triman;
-            //new SimpleTask().execute(web);
-            PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
-            task.execute("http://103.236.201.252/android/login.php");
+            if (v == lupaPassword){
+                Toast.makeText(LoginActivity.this, "Berhasil ditekan", Toast.LENGTH_SHORT).show();
+                // nunggu ui custom dialog
+                AlertDialog.Builder alertBuilder= new AlertDialog.Builder(LoginActivity.this);
+
+                LayoutInflater inflater= this.getLayoutInflater();
+
+                View view= inflater.inflate(R.layout.alert_forgot_password, null);
+                alertBuilder.setView(view);
+
+                alertBuilder.setPositiveButton("KIRIM", null);
+                alertBuilder.setNegativeButton("BATAL", null);
+
+                AlertDialog alertDialog= alertBuilder.create();
+
+                alertDialog.show();
+            }
+            else{
+                HashMap postData = new HashMap();
+
+                postData.put("mobile", "android");
+                postData.put("txtUsername", txtusername.getText().toString());
+                postData.put("txtPassword", txtpassword.getText().toString());
+                String triman = txtusername.getText().toString().replace(" ", "%20");
+                web = URL+"?user="+triman;
+
+                //new SimpleTask().execute(web);
+                PostResponseAsyncTask task = new PostResponseAsyncTask(this, postData);
+                task.execute("http://103.236.201.252/android/login.php");
+            }
         }
 
     public void ambildata(){
