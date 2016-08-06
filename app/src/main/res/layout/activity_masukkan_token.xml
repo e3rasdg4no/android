@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:id="@+id/atas1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#efefef">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView10"
+                android:src="@drawable/logowarna"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:id="@+id/imageBantuInMasukkanToken"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/bantuanfix"
+                android:paddingBottom="8dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageButton
+                android:id="@+id/imagebackInMasukkanToken"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/iconback"
+                android:paddingBottom="8dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="left|top"
+            android:background="@color/hijau"
+            android:id="@+id/atas2"
+            android:layout_below="@+id/atas1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="MASUKKAN KODE KEAMANAN"
+                android:id="@+id/textView5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/atas2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 digit angka."
+                    android:id="@+id/textView35"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="left"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="KODE ENAM DIGIT"
+                    android:layout_marginTop="20dp" />
+                <EditText
+                    android:id="@+id/codeInMasukkanToken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:layout_below="@+id/textView35"
+                    android:layout_alignLeft="@+id/textView35"
+                    android:layout_alignStart="@+id/textView35"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Kami mengirimi Anda kode ke: "
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="left"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/numberInMasukkanToken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="+**********38"
+                    android:layout_marginTop="5dp" />
+                <Button
+                    android:id="@+id/lanjutkanInMasukkanToken"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="LANJUTKAN"
+                    android:layout_below="@+id/gambarTampung"
+                    android:background="@drawable/button_rounded"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center_horizontal"/>
+                <Button
+                    android:id="@+id/batalkanInMasukkanToken"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="BATALKAN"
+                    android:layout_below="@+id/gambarTampung"
+                    android:background="@drawable/button_rounded2"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
