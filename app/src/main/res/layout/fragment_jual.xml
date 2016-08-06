@@ -5,28 +5,102 @@
     android:layout_height="match_parent"
     tools:context="com.eragano.eraganoapps.fragment.JualFragment"
     android:isScrollContainer="false">
-    <com.ogaclejapan.smarttablayout.SmartTabLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/tabJual"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingBottom="0dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        app:stl_defaultTabTextColor="@drawable/tab_color_selector"
-        app:stl_dividerColor="#00000000"
-        app:stl_distributeEvenly="true"
-        app:stl_indicatorColor="@color/colorPrimary"
-        app:stl_indicatorCornerRadius="1.5dp"
-        app:stl_indicatorThickness="3dp"
-        app:stl_underlineColor="#00000000"
-        android:background="@drawable/bg_rounded4"
-        app:stl_defaultTabTextSize="12sp"
-        app:stl_defaultTabTextAllCaps="false"/>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPagerJual"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tabJual"></android.support.v4.view.ViewPager>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/txtSearch"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/edittext_rounded2"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:hint="Cari disini..."
+        android:layout_marginTop="20dp"
+        android:textSize="16dp"
+        android:maxLines="1"
+        android:inputType="text"
+        android:imeOptions="actionSearch" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/imageView7"
+        android:src="@android:drawable/ic_menu_search"
+        android:layout_alignTop="@+id/txtSearch"
+        android:layout_alignRight="@+id/txtSearch"
+        android:layout_alignEnd="@+id/txtSearch"
+        android:layout_marginRight="20dp" />
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listJual"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:divider="@color/hijau"
+        android:dividerHeight="2dp"
+        android:layout_below="@+id/txttampilkan"
+        android:scrollbars="none"/>
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/posting"
+        android:src="@drawable/tandaplus"
+        android:layout_marginBottom="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/imgtambah"
+        android:layout_alignStart="@+id/imgtambah"
+        android:layout_alignRight="@+id/imgtambah"
+        android:layout_alignEnd="@+id/imgtambah" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PRODUK ANDA\nMASIH KOSONG"
+        android:id="@+id/kosong"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/hijau" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:id="@+id/imgtambah"
+        android:layout_marginBottom="62dp"
+        android:src="@drawable/tambahproduk"
+        android:layout_alignBottom="@+id/posting"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tampilkan Semua Produk"
+        android:id="@+id/txttampilkan"
+        android:layout_below="@+id/txtSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/hijau" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Muat Ulang"
+        android:id="@+id/muatulang"
+        android:textColor="@color/hijau"
+        android:layout_alignTop="@+id/txttampilkan"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

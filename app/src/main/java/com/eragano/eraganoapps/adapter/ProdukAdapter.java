@@ -2,7 +2,6 @@ package com.eragano.eraganoapps.adapter;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,12 +24,17 @@ import java.util.List;
 public class ProdukAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private List<Produk> mPosts;
+    private ViewHolder mViewHolder;
+
+    private Produk mPost;
     private Activity mActivity;
 
 
     public ProdukAdapter(Activity activity, List<Produk> posts) {
-        this.mPosts = posts;
-        this.mActivity = activity;
+        mInflater = (LayoutInflater) activity.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        mPosts = posts;
+        mActivity = activity;
     }
 
     public void cleardata(){
@@ -55,26 +59,21 @@ public class ProdukAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder mViewHolder;
-
         if (convertView == null) {
-            mInflater = (LayoutInflater) mActivity.getSystemService(
-                    Context.LAYOUT_INFLATER_SERVICE);
-
             convertView = mInflater.inflate(R.layout.layout_produk, parent, false);
             mViewHolder = new ViewHolder();
-            /*mViewHolder.produk = (ImageView) convertView.findViewById(R.id.gambar_produk);
+            mViewHolder.produk = (ImageView) convertView.findViewById(R.id.gambar_produk);
             mViewHolder.namaProduk = (TextView) convertView.findViewById(R.id.nama_produk);
             mViewHolder.tanggalPanen = (TextView) convertView.findViewById(R.id.tanggal_panen);
             mViewHolder.stokHarga = (TextView) convertView.findViewById(R.id.stok_harga);
-            mViewHolder.tanggalUp = (TextView) convertView.findViewById(R.id.tanggal_up);*/
+            mViewHolder.tanggalUp = (TextView) convertView.findViewById(R.id.tanggal_up);
 
             convertView.setTag(mViewHolder);
 
         } else {
             mViewHolder = (ViewHolder) convertView.getTag();
         }
-        Produk mPost = mPosts.get(position);
+        mPost = mPosts.get(position);
 
         final String value = "http://103.236.201.252/android/uploads/"+mPost.getImage();
         Picasso.with(mActivity)
