@@ -1,8 +1,12 @@
 package com.eragano.eraganoapps.lupapassword;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -62,13 +66,21 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v == back){
-            Intent intent= new Intent(ResetPassword.this, MasukkanTokenPassword.class);
-            startActivity(intent);
-
-            finish();
+            onBackPressed();
         }
         else if (v == bantuan){
-
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:087711242493"));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            this.startActivity(intent);
         }
         else if (v == lanjutkan){
             if (!validateSandiBaru()){
@@ -86,7 +98,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                 public void onResponse(String response) {
                     p.dismiss();
 
-                    Toast.makeText(ResetPassword.this, "Kata sandi berhasil diganti", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassword.this, "Kata kunci berhasil dirubah", Toast.LENGTH_SHORT).show();
 
                     Intent intent= new Intent(ResetPassword.this, LoginActivity.class);
                     startActivity(intent);
@@ -97,6 +109,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     p.dismiss();
+
+                    Toast.makeText(ResetPassword.this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show();
                 }
             }){
                 @Override
@@ -118,7 +132,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
             requestQueue.add(stringRequest);
         }
         else{
-            Intent intent= new Intent(ResetPassword.this, MasukkanTokenPassword.class);
+            Intent intent= new Intent(ResetPassword.this, LoginActivity.class);
             startActivity(intent);
 
             finish();
@@ -127,7 +141,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
 
     public boolean validateSandiBaru(){
         if (TextUtils.isEmpty(kataSandiBaru.getText())){
-            kataSandiBaru.setError("Kata sandi tidak boleh kosong");
+            kataSandiBaru.setError("Kata kunci tidak boleh kosong");
             kataSandiBaru.requestFocus();
 
             return false;
@@ -138,18 +152,23 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
 
     public boolean validateUlangiSandi(){
         if (TextUtils.isEmpty(ulangiKataSandi.getText())){
-            ulangiKataSandi.setError("Ulangi sandi tidak boleh kosong");
+            ulangiKataSandi.setError("Ulangi kata kunci tidak boleh kosong");
             ulangiKataSandi.requestFocus();
 
             return false;
         }
         if (!ulangiKataSandi.getText().toString().equals(kataSandiBaru.getText().toString())){
-            ulangiKataSandi.setError("Sandi yang dimasukkan harus sama");
+            ulangiKataSandi.setError("Kata kunci yang dimasukkan harus sama");
             ulangiKataSandi.requestFocus();
 
             return false;
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

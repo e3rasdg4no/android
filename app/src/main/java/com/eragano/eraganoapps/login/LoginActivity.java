@@ -179,6 +179,8 @@ public class LoginActivity extends Activity implements AsyncResponse, View.OnCli
                                     @Override
                                     public void onErrorResponse(VolleyError error) {
                                         p.dismiss();
+
+                                        Toast.makeText(LoginActivity.this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show();
                                     }
                                 }){
                                     @Override
@@ -291,13 +293,11 @@ public class LoginActivity extends Activity implements AsyncResponse, View.OnCli
                 intent.putExtra("numberPhone", numbers);
                 intent.putExtra("token", token);
                 startActivity(intent);
-
-                finish();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(LoginActivity.this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show();
             }
         });
 

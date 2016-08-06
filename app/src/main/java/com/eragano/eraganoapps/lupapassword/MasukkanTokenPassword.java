@@ -1,7 +1,11 @@
 package com.eragano.eraganoapps.lupapassword;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -76,13 +80,21 @@ public class MasukkanTokenPassword extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (v == back){
-            Intent intent= new Intent(MasukkanTokenPassword.this, LoginActivity.class);
-            startActivity(intent);
-
-            finish();
+            onBackPressed();
         }
         else if (v == bantuan){
-
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:087711242493"));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            this.startActivity(intent);
         }
         else if (v == lanjutkan){
             if (!validateToken()){
@@ -92,8 +104,6 @@ public class MasukkanTokenPassword extends AppCompatActivity implements View.OnC
             Intent intent= new Intent(MasukkanTokenPassword.this, ResetPassword.class);
             intent.putExtra("username", username);
             startActivity(intent);
-
-            finish();
         }
         else{
             Intent intent= new Intent(MasukkanTokenPassword.this, LoginActivity.class);
@@ -128,5 +138,10 @@ public class MasukkanTokenPassword extends AppCompatActivity implements View.OnC
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

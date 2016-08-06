@@ -95,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter"
+                    android:text="Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 digit angka."
                     android:id="@+id/textView35"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="left"/>
