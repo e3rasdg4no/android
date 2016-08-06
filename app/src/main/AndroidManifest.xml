@@ -99,6 +99,8 @@
         <activity android:name=".performa.InputKinerjaActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".informasi.weather_forecast.WeatherActivity"></activity>
+        <activity android:name=".lupapassword.MasukkanTokenPassword"></activity>
+        <activity android:name=".lupapassword.ResetPassword"></activity>
     </application>
 
 </manifest>
