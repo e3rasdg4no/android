@@ -5,15 +5,19 @@ package com.eragano.eraganoapps.penampung;
  */
 public class Produk {
 
-    /**
-     * id_jual : 1
-     * user : faiz
-     * image : 1.jpg
-     * nama : Tomat
-     * tanggal_panen : 23-02-2016
-     * harga : 20000
-     * stok : 10
-     * tanggal : 23-02-2016
+    /*
+     id_jual : "25"
+     user : "dandi"
+     image : "IMG_20160806_184616.jpg"
+     nama : "nzka"
+     tanggal_panen : "18-08-2016"
+     satuan : "Kilogram"
+     harga : "2000"
+     stok : "12"
+     tanggal : "06-Aug-2016"
+     jumlahJual : "0"
+     jumlahPesanan : "0"
+     jumlahTerjual : "0"
      */
 
     private String id_jual;
@@ -25,6 +29,9 @@ public class Produk {
     private String harga;
     private String stok;
     private String tanggal;
+    private String jumlahJual;
+    private String jumlahPesanan;
+    private String jumlahTerjual;
 
     public String getId_jual() {
         return id_jual;
@@ -93,7 +100,32 @@ public class Produk {
     public String getSatuan() {
         return satuan;
     }
+
     public void setSatuan(String satuan) {
         this.satuan = satuan;
+    }
+
+    public String getJumlahJual() {
+        return jumlahJual;
+    }
+
+    public void setJumlahJual(String jumlahJual) {
+        this.jumlahJual = jumlahJual;
+    }
+
+    public String getJumlahPesanan() {
+        return jumlahPesanan;
+    }
+
+    public void setJumlahPesanan(String jumlahPesanan) {
+        this.jumlahPesanan = jumlahPesanan;
+    }
+
+    public String getJumlahTerjual() {
+        return jumlahTerjual;
+    }
+
+    public void setJumlahTerjual(String jumlahTerjual) {
+        this.jumlahTerjual = jumlahTerjual;
     }
 }
