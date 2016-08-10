@@ -185,7 +185,7 @@ public class InputKinerjaActivity extends Activity {
             public void onClick(View v) {
                 cekisi();
                 if(cekisi().equals("true")) {
-                    //sendEmail();
+                    sendEmail();
                     uploadImage();
                 }
             }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Eragano Testing</string>
+    <string name="app_name">Eragano</string>
     <string name="ip">103.236.201.252</string>
     <string name="open_weather_maps_app_id">532d313d6a9ec4ea93eb89696983e369</string>
 
