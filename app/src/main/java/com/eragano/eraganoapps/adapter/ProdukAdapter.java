@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -148,6 +149,19 @@ public class ProdukAdapter extends BaseAdapter {
                 save.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (TextUtils.isEmpty(jumlah.getText())){
+                            jumlah.setError("Kolom ini tidak boleh kosong");
+                            jumlah.requestFocus();
+
+                            return ;
+                        }
+                        if (TextUtils.isEmpty(hargas.getText())){
+                            hargas.setError("Kolom ini tidak boleh kosong");
+                            hargas.requestFocus();
+
+                            return ;
+                        }
+
                         final String jumlahs= jumlah.getText().toString();
                         final String hargass= hargas.getText().toString();
                         final String id= produk1.getId_jual();
