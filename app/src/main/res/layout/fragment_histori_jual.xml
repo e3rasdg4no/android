@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/his"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -18,4 +19,12 @@
         android:gravity="center"
         android:textColor="@color/hijau"
         android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/tambahProduk"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:src="@drawable/button_tambahproduk"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"/>
 </RelativeLayout>

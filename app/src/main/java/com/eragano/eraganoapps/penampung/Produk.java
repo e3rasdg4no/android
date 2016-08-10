@@ -32,6 +32,8 @@ public class Produk {
     private String jumlahJual;
     private String jumlahPesanan;
     private String jumlahTerjual;
+    private String hargaExternal;
+    private String statusTerjual;
 
     public String getId_jual() {
         return id_jual;
@@ -127,5 +129,21 @@ public class Produk {
 
     public void setJumlahTerjual(String jumlahTerjual) {
         this.jumlahTerjual = jumlahTerjual;
+    }
+
+    public String getHargaExternal() {
+        return hargaExternal;
+    }
+
+    public void setHargaExternal(String hargaExternal) {
+        this.hargaExternal = hargaExternal;
+    }
+
+    public String getStatusTerjual() {
+        return statusTerjual;
+    }
+
+    public void setStatusTerjual(String statusTerjual) {
+        this.statusTerjual = statusTerjual;
     }
 }

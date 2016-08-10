@@ -2,13 +2,16 @@ package com.eragano.eraganoapps.fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.eragano.eraganoapps.R;
 import com.eragano.eraganoapps.adapter.ProdukAdapter;
+import com.eragano.eraganoapps.jual.camera.JualCameraActivity;
 import com.eragano.eraganoapps.penampung.Produk;
 import com.google.gson.Gson;
 
@@ -42,6 +46,7 @@ public class FragmentHistoriJual extends Fragment {
     private List<Produk> produkList= null;
     private TextView kosong= null;
     private SharedPreferences sp=null;
+    private ImageView tambah= null;
 
     @Nullable
     @Override
@@ -52,6 +57,15 @@ public class FragmentHistoriJual extends Fragment {
 
         list= (ListView)view.findViewById(R.id.listHistoriJual);
         kosong= (TextView)view.findViewById(R.id.kosong);
+        tambah= (ImageView)view.findViewById(R.id.tambahProduk);
+
+        tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getActivity(), JualCameraActivity.class);
+                startActivity(intent);
+            }
+        });
 
         produkList= new ArrayList<>();
 

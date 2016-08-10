@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_rounded">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:layout_centerVertical="true"
+    android:padding="3dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
         <RelativeLayout
             android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
             android:layout_height="40dp">
             <TextView
                 android:id="@+id/titleDialog"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:textColor="@color/hijau"
                 android:text="Tomat, 20Kg - Rp. 20.000"
                 android:layout_centerVertical="true"
@@ -39,7 +36,7 @@
                 android:id="@+id/textClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/hijau"
                 android:text="Tutup"
                 android:paddingLeft="10dp"
@@ -56,7 +53,7 @@
         <RelativeLayout
             android:id="@+id/relativeLayout28"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="110dp"
             android:background="@color/hijau"
             android:layout_below="@+id/view9"
             android:layout_marginTop="10dp"
@@ -64,24 +61,68 @@
             android:paddingRight="10dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp">
-            <EditText
-                android:id="@+id/jumlahInDialogHistori"
+            <LinearLayout
+                android:id="@+id/linnn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:backgroundTint="#ffffff"
-                android:hint="Jumlah :                                                    000"/>
-            <EditText
-                android:id="@+id/hargaInDialogHistori"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Jumlah : "
+                    android:textColor="#ffffff"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/jumlahInDialogHistori"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        android:textColorHighlight="@color/transparent"
+                        android:background="@color/transparent"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ffffff"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lannn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:backgroundTint="#ffffff"
-                android:hint="Harga :                                                       000"
-                android:layout_below="@+id/jumlahInDialogHistori"
-                android:layout_marginTop="10dp"/>
+                android:orientation="horizontal"
+                android:layout_below="@+id/linnn"
+                android:layout_marginTop="25dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Harga   : "
+                    android:textColor="#ffffff"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/hargaInDialogHistori"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        android:background="@color/transparent"
+                        android:textColorHint="@color/abutulisan"
+                        android:textColorHighlight="@color/transparent"
+                        android:hint="Rp. "/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ffffff"/>
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -113,4 +154,3 @@
                 android:textAllCaps="false"/>
         </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
