@@ -7,4 +7,15 @@
         android:id="@+id/listHistoriJual"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PRODUK ANDA\nMASIH KOSONG"
+        android:id="@+id/kosong"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/hijau"
+        android:visibility="gone"/>
 </RelativeLayout>

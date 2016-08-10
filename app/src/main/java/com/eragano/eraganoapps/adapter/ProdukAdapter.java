@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.eragano.eraganoapps.R;
 import com.eragano.eraganoapps.penampung.Produk;
 import com.squareup.picasso.Picasso;
@@ -22,34 +23,22 @@ import java.util.List;
  * Created by M Dimas Faizin on 3/29/2016.
  */
 public class ProdukAdapter extends BaseAdapter {
-    private LayoutInflater mInflater;
-    private List<Produk> mPosts;
-    private ViewHolder mViewHolder;
+    private List<Produk> produkList= null;
+    private Context context= null;
 
-    private Produk mPost;
-    private Activity mActivity;
-
-
-    public ProdukAdapter(Activity activity, List<Produk> posts) {
-        mInflater = (LayoutInflater) activity.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
-        mPosts = posts;
-        mActivity = activity;
+    public ProdukAdapter(Context context, List<Produk> produkList) {
+        this.produkList = produkList;
+        this.context = context;
     }
 
-    public void cleardata(){
-        if(mPosts !=null && mPosts.isEmpty()){
-            mPosts.clear();
-        }
-    }
     @Override
-    public int getCount()  {
-        return mPosts.size();
+    public int getCount() {
+        return produkList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mPosts.get(position);
+        return produkList.get(position);
     }
 
     @Override
@@ -59,94 +48,50 @@ public class ProdukAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.layout_produk, parent, false);
-            mViewHolder = new ViewHolder();
-            mViewHolder.produk = (ImageView) convertView.findViewById(R.id.gambar_produk);
-            mViewHolder.namaProduk = (TextView) convertView.findViewById(R.id.nama_produk);
-            mViewHolder.tanggalPanen = (TextView) convertView.findViewById(R.id.tanggal_panen);
-            mViewHolder.stokHarga = (TextView) convertView.findViewById(R.id.stok_harga);
-            mViewHolder.tanggalUp = (TextView) convertView.findViewById(R.id.tanggal_up);
+        ViewHolder viewHolder;
 
-            convertView.setTag(mViewHolder);
+        if (convertView == null){
+            viewHolder= new ViewHolder();
 
-        } else {
-            mViewHolder = (ViewHolder) convertView.getTag();
-        }
-        mPost = mPosts.get(position);
+            LayoutInflater inflater= (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        final String value = "http://103.236.201.252/android/uploads/"+mPost.getImage();
-        Picasso.with(mActivity)
-                .load(value)
-                .resize(600,600)
-                .centerCrop()
-                .into(mViewHolder.produk);
-        mViewHolder.produk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Dialog settingsDialog = new Dialog(mActivity);
-                settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+            convertView= inflater.inflate(R.layout.layout_produk, null);
 
-                ImageView imageView = new ImageView(mActivity);
-                Picasso.with(mActivity)
-                        .load(value)
-                        .resize(600,600)
-                        .centerCrop()
-                        .into(imageView);
-                settingsDialog.setContentView(mInflater.inflate(R.layout.activity_display_image, null));
-                settingsDialog.addContentView(imageView, new RelativeLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
-                //settingsDialog.onTouchEvent()
-                settingsDialog.show();
-            }
-        });
+            viewHolder.image= (ImageView)convertView.findViewById(R.id.imageInHistori);
+            viewHolder.judul= (TextView)convertView.findViewById(R.id.title_post);
+            viewHolder.jumlahJual= (TextView)convertView.findViewById(R.id.jumlahJual);
+            viewHolder.jumlahPesanan= (TextView)convertView.findViewById(R.id.jumlahPesanan);
+            viewHolder.jumlahTerjual= (TextView)convertView.findViewById(R.id.jumlahTerjual);
+            viewHolder.idJual= (TextView)convertView.findViewById(R.id.idJual);
 
-        String x = mPost.getHarga();
-        if(x.length()==4){
-            x = x.substring(0,1)+"."+x.substring(1);
-        }
-        else if(x.length()==5){
-            x = x.substring(0,2)+"."+x.substring(2);
-        }
-        else if(x.length()==6){
-            x = x.substring(0,3)+"."+x.substring(3);
-        }
-        else if(x.length()==7){
-            x = x.substring(0,1)+"."+x.substring(1,4)+"."+x.substring(4);
-        }
-        else if(x.length()==8){
-            x = x.substring(0,2)+"."+x.substring(2,5)+"."+x.substring(5);
-        }
-        else if(x.length()==9){
-            x = x.substring(0,3)+"."+x.substring(3,6)+"."+x.substring(6);
-        }
-        else if(x.length()==10){
-            x = x.substring(0,4)+"."+x.substring(4,7)+"."+x.substring(7);
-        }
-
-        String campur = mPost.getStok()+ " "+mPost.getSatuan()+" - RP "+x+" Per "+mPost.getSatuan();
-        String nama = "";
-        if(mPost.getNama().length()>11){
-            nama = mPost.getNama().substring(0,8);
-            nama = nama + "...";
+            convertView.setTag(viewHolder);
         }
         else{
-            nama = mPost.getNama();
+            viewHolder= (ViewHolder)convertView.getTag();
         }
-        mViewHolder.namaProduk.setText(nama);
-        mViewHolder.tanggalPanen.setText(mPost.getTanggal_panen());
-        mViewHolder.tanggalUp.setText(mPost.getTanggal());
-        mViewHolder.stokHarga.setText(campur);
+
+        Produk produk= produkList.get(position);
+
+        String imagePath= "http://103.236.201.252/android/uploads/" + produk.getImage();
+        Glide.with(context)
+                .load(imagePath)
+                .centerCrop()
+                .into(viewHolder.image);
+        viewHolder.judul.setText(produk.getNama());
+        viewHolder.jumlahJual.setText(produk.getStok());
+        viewHolder.jumlahPesanan.setText(produk.getJumlahPesanan());
+        viewHolder.jumlahTerjual.setText(produk.getJumlahTerjual());
+        viewHolder.idJual.setText(produk.getId_jual());
 
         return convertView;
     }
 
-    private static class ViewHolder {
-        ImageView produk;
-        TextView namaProduk;
-        TextView tanggalUp;
-        TextView tanggalPanen;
-        TextView stokHarga;
+    private class ViewHolder{
+        ImageView image;
+        TextView judul;
+        TextView jumlahJual;
+        TextView jumlahPesanan;
+        TextView jumlahTerjual;
+        TextView idJual;
     }
 }
