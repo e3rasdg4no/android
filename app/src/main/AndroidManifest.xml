@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -36,8 +37,9 @@
         <activity android:name=".fragment.AsuransiFragment" />
         <activity android:name=".fragment.HomeFragment" />
         <activity android:name=".fragment.RekeningFragment" />
-        <activity android:name=".fragment.InformasiFragment"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".fragment.InformasiFragment"
+            android:theme="@style/AppTheme" />
         <activity android:name=".fragment.JualFragment" />
         <activity android:name=".asuransi.Asuransi1" />
         <activity android:name=".asuransi.Asuransi2" />
@@ -97,11 +99,13 @@
         <activity android:name=".fragment.KinerjaFragment" />
         <activity android:name=".performa.InputKinerja" />
         <activity android:name=".fragment.KinerjaFragment2" />
-        <activity android:name=".performa.InputKinerjaActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <activity android:name=".informasi.weather_forecast.WeatherActivity"></activity>
-        <activity android:name=".lupapassword.MasukkanTokenPassword"></activity>
-        <activity android:name=".lupapassword.ResetPassword"></activity>
+        <activity
+            android:name=".performa.InputKinerjaActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".informasi.weather_forecast.WeatherActivity" />
+        <activity android:name=".lupapassword.MasukkanTokenPassword" />
+        <activity android:name=".lupapassword.ResetPassword" />
+        <activity android:name=".adapter.NewHomeAdapter"></activity>
     </application>
 
 </manifest>

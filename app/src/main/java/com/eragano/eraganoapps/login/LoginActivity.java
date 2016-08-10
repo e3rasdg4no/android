@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ import com.eragano.eraganoapps.view.UIText;
 import com.google.gson.Gson;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,6 +78,8 @@ public class LoginActivity extends Activity implements AsyncResponse, View.OnCli
             startActivity(i);
             finish();
         } else {
+            ImageView img = (ImageView) findViewById(R.id.imageView3);
+            Picasso.with(LoginActivity.this).load(R.drawable.login_background).into(img);
             Button btnLogin = (Button) findViewById(R.id.buttonLogin);
             TextView txtdaftar = (TextView) findViewById(R.id.daftar);
             txtdaftar.setOnClickListener(new View.OnClickListener() {

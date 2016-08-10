@@ -26,9 +26,15 @@ import android.widget.TextView;
 
 import com.eragano.eraganoapps.R;
 import com.eragano.eraganoapps.adapter.HomeAdapter;
+import com.eragano.eraganoapps.adapter.HomeItem;
+import com.eragano.eraganoapps.adapter.NewHomeAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends android.support.v4.app.Fragment {
     private ListView ls;
+    List<HomeItem> homeItems;
     Context context;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -53,7 +59,14 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         Integer backImage[] = {R.drawable.dashboardbelikebutuhan, R.drawable.dashboardjadwalbertani, R.drawable.dashboardjualhasilpanen, R.drawable.dashboradasuransi, R.drawable.dashboardpinjaman, R.drawable.dashboardinformasipertanian, R.drawable.dashboardkinerja};
         Integer iconImage[] = {R.drawable.iconbeli, R.drawable.iconjadwal, R.drawable.iconjual, R.drawable.iconasuransi, R.drawable.iconpinjaman, R.drawable.iconinformasi, R.drawable.iconkinerja};
 
-        HomeAdapter adapter = new HomeAdapter(getActivity(), backImage, iconImage, header1, header2);
+        homeItems = new ArrayList<HomeItem>();
+        for(int i=0;i<header1.length;i++){
+            HomeItem item = new HomeItem(backImage[i],iconImage[i],header1[i],header2[i]);
+            homeItems.add(item);
+        }
+
+        NewHomeAdapter adapter = new NewHomeAdapter(getActivity(), homeItems);
+        //HomeAdapter adapter = new HomeAdapter(getActivity(), backImage, iconImage, header1, header2);
         ls.setAdapter(adapter);
 
         final FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
